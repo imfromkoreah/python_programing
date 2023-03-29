@@ -16,6 +16,10 @@ length_list = 120 # 변수명은 명확하게 나타낼 수 있도록 하자.
 
 a = 3
 b = 10 
-c = a + b
-a = c
-a = a + b
+#c = a + b
+#a = c
+#a = a + b
+# a <- a * b
+a *= b
+a = 3 * 10
+print("a : ", a)
