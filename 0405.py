@@ -40,4 +40,74 @@ print(bool(a))
 print(bool("hello"), bool("hi"), bool(3), bool(-3)) #true
 print(bool(""),bool(0)) #false 빈문자, 0
 
+#조건문
+'''
+if 조건1 :
+    실행문1
+else :
+    실행문2
+'''
 
+#오전/오후
+h = 9
+if h < 12 :
+    #h가 12보다 작을 때
+    print("오전", h, "가 12보다 작다.")
+else :
+    #실행문2
+    #h가 12보다 크다.
+    print("오후 ", h, "는 12보다 크다.")
+
+h = 10
+if h < 12 :
+    print("오전 ", h, "가 12보다 작다") #h가 12보다 작을 때
+elif h < 18 : # 12 < h < 18
+    print("오후 ", h, "가 12보다 크고 18보다 작음")
+else : # 18 < h
+    print("저녁", h, "는 18보다 크다.")
+
+lunch = input("밥 먹을래?")
+if lunch == "yes" :
+    print("밥을 먹고 싶군요")
+    cafeteria = input("학식 고?")
+    if cafeteria == "yes" :
+        print("학식당으로 가자")
+    else :
+        print("학식 싫구나")
+        subway = input("서브웨이 가실?")
+        if subway == "yes" :
+            print("서브웨이 가자")
+        else :
+            print("서브웨이도 싫어?")
+else :
+            print("밥 먹지 마")
+
+# for, while 반복문
+# in range
+for i in 1,2,3,4,5,6 :
+    print("i: ", i)
+
+#range
+for i in range(0,20,1): #0에서 19까지 1씩 증가
+     print("i : ", i)
+
+for i in range(20):
+     print("i : ", i)
+
+for i in range(1,21,2): #20까지 수 중 짝수만 출력
+     print("i : ", i)
+
+#1부터 10까지 합을 구하시오
+#2가지 방법으로, range도 쓰고, 그냥 명시도 하고...
+sum = 0
+for i in 1,2,3,4,5,6,7,8,9,10 :
+    sum = sum + i
+    #sum += i
+    print(i , "번째 loop입니다. sum은 ", sum , "입니다.")
+
+print("range를 사용하였음")
+sum = 0
+for i in range(1, 11, 1) :
+     sum += i
+     #sum = sum + i
+     print(i, " 번째 loop입니다. sum은" , sum , "입니다.")
