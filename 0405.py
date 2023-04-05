@@ -111,3 +111,71 @@ for i in range(1, 11, 1) :
      sum += i
      #sum = sum + i
      print(i, " 번째 loop입니다. sum은" , sum , "입니다.")
+
+#while
+'''
+while 조건 :
+     수행문1   
+else :
+     수행문2
+''' 
+#sum , 0~10까지 숫자를 찍고 sum을 구하자
+n = 0
+while n < 11 :
+     #print("n : ", n)
+     sum += n
+     print(n, "번째 sum : ", sum)
+     #print(n, end="")
+     n= n +1
+
+print("while 밖에서 sum의 값 : ", sum)
+
+while False :
+     print("실행이 되지 않음")
+
+while 0 :
+     print("실행이 되지 않음")
+
+print("while 0 다음 줄입니다.")
+
+#while True :
+#     print("무한루프")
+
+#while False :
+#     print("실행이 되지 않음")
+
+
+#break continue
+#단어 입력을 무한 루프로 받는다.
+# 그 글자를 3번 서 줌
+# exit -> 루프를 끝내고 종료함
+#"apple" -> 3번 안 쓰고 그냥 다시 단어 입력을 받음.
+''' 
+<시나리오 구성>
+while True :
+     단어 입력을 받는다.
+     if exit인 경우 :
+         break
+     elif apple인 경우 :
+        continue
+     else :
+          for : 
+          3번 찍는다.
+'''
+
+while True : 
+     word = input("단어를 입력하세요.")
+     if word == "exit":
+          print("넌 exit을 입력했고 break를 만날 거야")
+          break
+          print("break 뒤의 문장")
+     elif word == "apple":
+          print("넌 apple을 입력했다. continue를 만난다.")
+          continue
+          print("continue 뒤의 문장")
+     else :
+          for i in range(3):
+               print(word, end='')
+          print("해당 단어 끝!")
+    print("※ apple을 넣으면 이걸 절대 볼 수 없음!")
+
