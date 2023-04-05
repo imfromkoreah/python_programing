@@ -177,5 +177,37 @@ while True :
           for i in range(3):
                print(word, end='')
           print("해당 단어 끝!")
-    print("※ apple을 넣으면 이걸 절대 볼 수 없음!")
+     print("※ apple을 넣으면 이걸 절대 볼 수 없음!")
 
+#import random
+
+#print(random.randint(0,10000))
+
+from random import randint
+#from random2 import randint
+print(randint(0,10000))
+
+#놀이동산 놀이기구 탑승 문제
+#총 정원 4명
+#정원이 차면, 놀이기구 시작
+#조건 키 150 이상만 탈 수 있음.
+#사람들한테 키를 물어보고, 탑승시키시오.
+# 150 이상 4명이 되면 놀이기구를 실행시킴.
+#수도 코드를 작성해 볼 것
+
+while True : 
+     height = input("키가 몇인가요?")
+
+     if height < 150 :
+          print("키가 150이 되지 않아서 놀이기구를 탈 수 없어.")
+          break
+          print("break 뒤의 문장")
+     elif height >= 150 :
+          print("넌 키가 150이구나! 탈 수 있겠어")
+          continue
+          print("continue 뒤의 문장")
+     else :
+          for i in range(3):
+               print(word, end='')
+          print("해당 단어 끝!")
+     print("※ apple을 넣으면 이걸 절대 볼 수 없음!")
