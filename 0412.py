@@ -145,6 +145,12 @@ print("l4 : ", l4)
 #[0,1,4,9,16,.....,81,100] i**2
 a = [i**2 for i in range(11)]
 print(a)
+'''
+같은 방법 => for문으로...
+a1 = []
+for i in range(11): #0~10
+      a1.append(i**2)
+'''
 
 # Quiz2 : 0~10까지의 숫자의 3배수을 리스트에 넣어라.
 #[0,3,6,9,12,.....,27,30]
@@ -155,4 +161,40 @@ print(b)
 #['hello','hello','hello',...'hello','hello'] 
 c = ["hello" for i in range(11)]
 print(c)
+
+#4) 0~10까지 짝수들의 제곱을 리스트에 넣으시오.
+#[0,4,16,36,64,...100]
+d = [i**2 for i in range(11) if i % 2 == 0]
+print(d)
+
+#List를 복사하기
+a = [0,4,16,36,64,100]
+b = a
+a.pop()
+print("a : ", a)
+print("b : ", b)
+
+a.pop()
+print("===after a.pop() ===")
+print("a : ", a)
+print("b : ", b)
+
+#deep copy
+c = a[:] # a[:]
+print("deep copy")
+print("a : ", a)
+print("c : ", c)
+
+a.pop()
+print("===after a.pop()===")
+print("a : ", a)
+print("b : ", b)
+print("c : ", c)
+
+c.append(555)
+print("===after c.pop(555)===")
+print("a : ", a)
+print("b : ", b)
+print("c : ", c)
+
 
