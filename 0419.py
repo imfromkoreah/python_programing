@@ -140,16 +140,89 @@ for item in month.items() :
 
 for haha in month :
     print(haha) #key값만 출력
-
+'''
 print(month.get('k1'))
 print(month.get('k100'))
 print(month['k1'])
 print(month['k100'])
-
+'''
 #dictionary 삭제
 print(month)
 print("month.pop('k1'): ",month.pop('k1')) #key값을 줘야 함
 print(month) #2월부터 출력 k1 삭제됨.
 print("month.popitem(): ",month.popitem()) #맨 마지막 것을 삭제함.
 print(month) #2월부터 11월까지 존재함.
+
+#zip(), enumerate()
+l1 = [1,2,3,4,5]
+l2 = ['a','b','c','d','e']
+l3 = [9,8,7,6,5]
+
+[(1,'a',9),(2,'b',8),...]
+
+z = zip(l1,l2,l3)
+print(type(z))
+print(z)
+print(list(z))
+
+#dictionary
+#list1 => dictionary x
+#L2 = zl, L3 = value
+z1 = zip(l2,l3)
+print(dict(z1))
+#print(list(z1))
+'''
+z2 = zip(l1,l2,l3) #dictionary는 key와 value 페어값인데 갯수가 맞지 않음.
+print(dict(z2)) #ValueError: dictionary update sequence element #0 has length 3; 2 is required
+'''
+z2 = zip(l1, zip(l2,l3))
+print(dict(z2))
+
+#1개 리스트를 dictionary로 변경
+#         0,         1,      2
+l4 = ['제육볶음','탕수육','연어덮밥']
+print(enumerate(l4))
+print(list(enumerate(l4)))
+
+
+#문제
+#과목을 주면 강의실을 알려주는 시스템
+subject = ['파이썬','자바','c++','AI','알고리즘']
+classroom = ['101호','102호','103호','104호','105호']
+#0) 과목명을 입력받는다.
+#1) dictionary로 변환해서 활용
+#2) 무한루프로 강의실을 알려줘라
+#3) quit이라는 단어가 들어오면, 강의실을 알려주는 시스템을 종료해라
+#4) 리스트에 없는 다른 과목을 물어보면, "몰라요"라고 대답하고 다시 과목명 물어보는 루프로 돌아가라.
+#5) 해당 과목에 대한 강의실을 알려줘라.
+#6) continue, break 활용할 것.
+
+d = dict(zip(subject,classroom))
+#{파이썬:101호, 자바:102호,...}
+'''
+while 1 :
+    c = input("과목명을 입력하세요")
+    if quit인 경우:
+        while 종료
+    if 해당 과목인 경우:
+    else : 아닌 경우 :
+       몰라요.
+
+    해당 과목명에 대해서 강의실을 넘겨준다
+    만약 해당 과목명이 아닌 경우, 몰라요를 출력 후 다시 루프 실행한다.
+    else
+'''
+while 1 :
+    c = input("과목명을 입력하세요")
+    if c == "quit" : #quit인 경우
+        print("너는 quit을 입력했으니, 종료한다.")
+        break #while 종료
+    if c in d.keys(): #해당과목인경우
+        print("강의실은 ",d[c]) # 출력
+    else : #아닌 경우 
+       print("몰라요.")
+       continue
+       
+
+
 
