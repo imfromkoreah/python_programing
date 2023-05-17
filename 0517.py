@@ -34,7 +34,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service= service)
-
+'''
 #(1) news를 가져온다.
 driver.get("http://www.naver.com/")
 time.sleep(1)
@@ -60,3 +60,38 @@ time.sleep(1)
 # 전세값 가져오기
 rentprice =  driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[5]/div/section/div/div/div[1]/div[2]/div/div/dl[2]").text
 print(rentprice)
+
+# 고양이 사진 가져오기
+driver.get("https://www.naver.com/")
+driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/div/input").click()
+time.sleep(1)
+driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/div/input").send_keys("고양이 사진")
+time.sleep(1)
+driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/button/span[2]").click()
+time.sleep(1)
+driver.find_element(By.XPATH, "/html/body/div[3]/div[2]/div/div[1]/section[1]/div/div[3]/div/div[9]/a").text
+'''
+# 주식 종목 정보 가져오기
+driver.get("https://finance.naver.com/")
+'''
+subject1 = driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[1]/th/a").text
+time.sleep(1)
+subject2 = driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[2]/th/a").text
+time.sleep(1)
+subject3 = driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[3]/th/a").text
+time.sleep(1)
+print(subject1, subject2, subject3)
+'''
+
+lst = []
+for i in range(10) : #0~9까지이므로 i+1
+    subject = driver.find_element(By.XPATH, f"/html/body/div[3]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[{i+1}]/th/a").text # variable i 생성
+    lst.append(subject)
+print(lst)
+
+lst2 = []
+for i in range(10) :
+    subject = driver.find_element(By.XPATH, f"/html/body/div[3]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table/tbody/tr[{i+1}]/td[1]").text
+    lst2.append(subject)
+print(lst2)
+    
